@@ -12,6 +12,7 @@ of them). I don't want to include Note1Text because it's already in my code so t
 generation can start from Note2Text.
 
 This is my template file (sample_tpl.txt)
+```vbnet
     Private mNote%(n)sText As String
     Public Property Note%(n)sText() As String
         Get
@@ -21,9 +22,11 @@ This is my template file (sample_tpl.txt)
             mNote%(n)sText = value
         End Set
     End Property
-
+```
 This is my command line
+```
     python numericRunme.py sample_tpl.txt 10 2 > out1.vb
+```
 
 ## Example for List Templated Increment
 
@@ -32,13 +35,17 @@ over again to reference them is a repetitive task. The list templated increment 
 the needed statements based on the list and a template.
 
 This is my template file (sample_tpl2.txt)
+```vbnet
     Dim %(tag)s_value As String = nav.SelectSingleNode(%(tag)s_xpath, nsmgr).Value
-
+```
 This is my list file (listvals2.txt)
+```
     Name
     Age
     City
     Country
-
+```
 This is my command line
+```
     python listRunme.py sample_tpl2.txt listvals2.txt > out2.vb
+```
